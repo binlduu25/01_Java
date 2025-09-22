@@ -16,13 +16,20 @@ public class ArrayRun {
 			// arrayrun.ArrayEx08();
 			// arrayrun.ArrayEx09();
 			// arrayrun.ArrayEx10();
-			// arrayrun.CreatLotto();
+			arrayrun.CreatLotto();
 			
 		ArrayPractice aprun = new ArrayPractice();
 			
 			// aprun.arrayPractice01();
 			// aprun.arrayPractice02();
-			aprun.arrayPractice04();
+			// aprun.arrayPractice04();
+			// aprun.arrayPractice05();
+			// aprun.arrayPractice06();
+			// aprun.arrayPractice07();
+			// aprun.arrayPractice08();
+			// aprun.arrayPractice09();
+			// aprun.arrayPractice10();
+			aprun.arrayPractice11();
 		
 		
 

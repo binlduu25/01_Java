@@ -131,11 +131,185 @@ public class ArrayPractice {
 		for(int i = 0; i < text.length(); i++) {
 			arr[i] = text.charAt(i);
 		}
-		
-	
-	
-	
+		System.out.println(Arrays.toString(arr));
+		System.out.printf("검색할 문자 : ");
+		char input = sc.next().charAt(0);
+		int count = 0;
+		System.out.printf("%s에 %s가(이) 존재하는 위치(인덱스) : ",text,input);
+		for(int i = 0; i < text.length(); i++) {
+			if (input == arr[i]) {
+				count++;
+				System.out.printf("%d ",i);
+				}
+		}
+		System.out.printf("\n%s의 개수 : %d",input,count);
 	}
+	public void arrayPractice06() {
+		
+		// 사용자가 배열의 길이를 직접 입력하여 그 값만큼 정수형 배열을 선언 및 할당하고
+		// 배열의 크기만큼 사용자가 직접 값을 입력하여 각각의 인덱스에 값을 초기화하세요.
+		// 그리고 배열 전체값을 나열하고 각 인덱스에 저장된 값들의 합을출력하세요.
+		//  [실행화면]
+		//		 정수: 5
+		//		 배열0번째인덱스에넣을값: 4
+		//		 배열1번째인덱스에넣을값: -4
+		//		 배열2번째인덱스에넣을값: 3
+		//		 배열3번째인덱스에넣을값: -3
+		//		 배열4번째인덱스에넣을값: 2
+		//		  4 -4 3 -3 2 
+		//		 총합: 2
+		
+		System.out.printf("정수 입력 : ");
+		int input = sc.nextInt();
+		int [] arr = new int [input];
+		int sum = 0;
+		for(int i = 0; i < arr.length; i++) {
+			System.out.printf("배열 %d번째 인덱스에 넣을 값 : ",i);
+			int input2 = sc.nextInt();
+			arr[i] = input2;
+			sum += arr[i];
+		}
+		System.out.println();
+		System.out.println(Arrays.toString(arr));
+		System.out.printf("\n총합 : %d",sum);
+	}
+	public void arrayPractice07() {
+		
+		// 주민등록번호를 입력받아 성별을 나타내는 숫자 이후부터 * 로 가리고 출력하세요.
+		// [실행화면]
+		// 주민등록번호 (-포함) : 123456-1234567
+		// 123456-1******
+		
+		System.out.printf("주민등록번호(-포함) 입력 : ");
+		String input = sc.next();
+		
+		char [] arr = new char [14];
+		for(int i = 0; i < 14; i ++) {
+			arr[i] = input.charAt(i);
+		}
+		for(int j = 0; j < 8; j++) {
+			System.out.printf("%s",arr[j]);
+		}
+		System.out.printf("******");
+	}
+	public void arrayPractice08() {
+		
+		/*
+		배열의 중간까지는 1부터 1씩 증가하여 오름차순으로 값을 넣고
+		중간 이후부터 끝까지는 1씩 감소하여 내림차순으로 값을 넣어 출력하세요.
+		단, 입력한 정수가 홀수가 아니거나 3 미만일 경우 “다시 입력하세요”를 출력하고 다시 정수를 받도록 하세요.
+		
+		[실행화면]
+		정수: 4
+		다시입력하세요.
+		정수: -6
+		다시입력하세요.
+		정수: 5
+		1, 2, 3, 2, 1
+		
+		*/
+		
+		System.out.printf("정수를 입력하세요 : ");
+		int num = sc.nextInt();
+		
+		if(num%2 == 0 || num < 3) {
+			System.out.println("다시 입력하세요.");
+		}
+		else {
+			int mid = (num/2)+1;
+			int [] arr = new int [num];
+			arr[num/2] = mid;
+			for (int i = 0; i < (arr.length)/2; i++) {
+				arr[i] = i+1;
+			}			
+			for (int j = 0; j < (arr.length)/2; j++) {
+				arr[arr.length-(j+1)] = j+1;
+			}
+			for(int k = 0; k < arr.length; k++) {
+				if (k == arr.length - 1 ) {
+					System.out.print(arr[k]);
+				}	
+				else {System.out.print(arr[k]+", ");	
+				}
+			}
+		}
+		
+	}
+	public void arrayPractice09() {
+		
+		// 10개의 값을 저장할 수 있는 정수형 배열을 선언 및 할당하고,
+		// 1~10 사이의 난수를 발생시켜 배열에 초기화한 후 출력하세요.
+		//  [실행화면]
+		// 발생한 난수 : 9 7 6 2 5 10 7 2 9 6
+		
+		int [] arr = new int [10];
+		int random = 0;
+		for(int i = 0; i < arr.length; i++) {
+			random = (int)(Math.random()*10)+1;
+			arr[i] = random;
+		}
+		System.out.println(Arrays.toString(arr));
+	}
+	public void arrayPractice10() {
+		
+		// 10개의 값을 저장할 수 있는 정수형 배열을 선언 및 할당하고,
+		// 1~10 사이의 난수를 발생시켜 배열에 초기화 후
+		// 배열 전체값과 그 값 중에서 최대값과 최소값을 출력하세요.
+		//  [실행화면]
+		// 발생한난수: 5 3 2 7 4 8 6 10 9 10 
+		// 최대값: 10
+		// 최소값: 2
+		
+		int [] arr = new int [10];
+		int random = 0;
 	
-	
+		
+		for( int i = 0; i < 10; i++) {
+			random = (int)((Math.random()*10)+1);
+			arr[i] = random;
+		}
+		System.out.print("발생한 난수 : ");
+		for( int i = 0; i < 10; i++) {
+			System.out.print(arr[i]+" ");
+		}
+		int max = arr[0];
+		int min = arr[0];
+		for( int i = 0; i < 10; i++) {
+			if (arr[i] > max) {
+				max = arr[i];
+			}
+		}
+		for( int i = 0; i < 10; i++) {
+			if (arr[i] < min) {
+				min = arr[i];
+			}
+		}
+		System.out.printf("\n최대값 : %d",max);
+		System.out.printf("\n최소값 : %d",min);
+		
+	}
+	public void arrayPractice11() {
+		
+		// 10개의 값을 저장할 수 있는 정수형 배열을 선언 및 할당하고
+		// 1~10 사이의 난수를 발생시켜 중복된 값이 없게 배열에 초기화한 후 출력하세요.
+		// [실행화면]
+		// 4 1 3 6 9 5 8 10 7 2
+		
+		int [] arr = new int [10];
+		int random = 0;
+		for ( int i = 0; i < arr.length; i++) {
+			random = (int)((Math.random()*10)+1);
+			arr[i] = random;
+			for ( int j = 0; j < i; j++) {
+				if ( arr[j] == random) {
+					i--;
+				}
+			}
+		}
+		System.out.println("실행 화면");
+		System.out.println(Arrays.toString(arr));
+	}
 }
+	
+	
+
