@@ -16,7 +16,7 @@ public class ArrayRun {
 			// arrayrun.ArrayEx08();
 			// arrayrun.ArrayEx09();
 			// arrayrun.ArrayEx10();
-			arrayrun.CreatLotto();
+			// arrayrun.CreatLotto();
 			
 		ArrayPractice aprun = new ArrayPractice();
 			
@@ -29,7 +29,9 @@ public class ArrayRun {
 			// aprun.arrayPractice08();
 			// aprun.arrayPractice09();
 			// aprun.arrayPractice10();
-			aprun.arrayPractice11();
+			// aprun.arrayPractice11();
+			// aprun.arrayPractice13();
+			// aprun.arrayPractice14();
 		
 		
 

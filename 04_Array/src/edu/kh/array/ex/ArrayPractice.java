@@ -309,7 +309,93 @@ public class ArrayPractice {
 		System.out.println("실행 화면");
 		System.out.println(Arrays.toString(arr));
 	}
-}
-	
-	
+	public void arrayPractice13() {  // ★★★★★ 나중에 한번 더
+		
+	//	문자열을 입력받아 문자열에 어떤 문자가 들어갔는지 배열에 저장하고
+	//	문자의 개수와 함께 출력하세요.
+	//	[실행화면]
+	//	문자열: application
+	//	문자열에 있는 문자 : a, p, l, i, c, t, o, n
+	//	문자개수 : 8
+
+		// 12_1 중복된 문자를 모두 받고, 출력만 하지 않는 방식
+		
+		// 1. 문자열 입력 받기
+		System.out.printf("문자열 입력 : ");
+		String input = sc.nextLine();
+		
+		// 2. 배열 할당 및 초기화
+		char [] arr = new char [input.length()];
+		for ( int i = 0; i < arr.length; i++) {
+			arr[i] = input.charAt(i);
+		}
+		
+		// 3. 중복 문자 존재할 경우 미출력
+		int duplicateText = 0;
+		System.out.printf("문자열에 있는 문자 : ");
+		for ( int i = 0; i < arr.length; i++) {
+			boolean flag = true;
+			for ( int j = 0; j < i; j++) { // 중복값 검사용 for문
+				if (arr[i] == arr[j]) { // 중복 있을 때
+					flag = false;
+					break;
+				}
+			}
+			
+			if(flag) {
+				if(i == 0) { // 첫번째 글자 출력
+					System.out.print(arr[i]);
+				}
+				else { // 두번째 글자부터 출력
+					System.out.print(", "+arr[i]);
+				}
+				duplicateText ++;
+				
+			}
+		}
+		System.out.println();
+		System.out.println("\n문자 개수 : "+(arr.length-duplicateText));
+	}
+	public void arrayPractice14() {
+		
+	// 사용자가 입력한 배열의 길이만큼의 문자열 배열을 선언 및 할당하고
+	// 배열의 인덱스에 넣을 값 역시 사용자가 입력하여 초기화하세요.
+	// 단, 사용자에게 배열에 값을 더 넣을지 물어보고 몇 개를 더 입력할 건지,
+	// 늘린 곳에 어떤 데이터를 넣을 것인지 받으세요.
+	// 사용자가 더이상 입력하지 않겠다고 하면 배열 전체값을 출력하세요
+			
+	//	[실행화면]
+	//	배열의 크기를 입력하세요: 3
+	//	1번째 문자열: 자바의정석
+	//	2번째 문자열: 알고리즘
+	//	3번째 문자열: C프로그래밍
+	//	더 값을 입력하시겠습니까?(Y/N) : y
+	//	더 입력하고 싶은 개수: 2
+	//	4번째 문자열: 인간관계
+	//	5번째 문자열: 자기계발
+	//	더 값을 입력하시겠습니까?(Y/N) : y
+	//	더 입력하고 싶은 개수: 1
+	//	6번째 문자열: 영단어600
+	//	더 값을 입력하시겠습니까?(Y/N) : n
+	//	[자바의정석, 알고리즘, C프로그래밍, 인간관계, 자기계발, 영단어600]
+
+		System.out.printf("배열의 크기를 입력하세요 : ");
+		int arraysize = sc.nextInt();
+		
+		boolean yn = true;
+		
+		while(yn) {
+			
+			for ( int i = 1; i <= arraysize; i++) {
+				System.out.printf("%d번째 문자열 : ",i);
+				String input = sc.nextLine();
+			
+			}
+		
+		
+		}
+		
+		
+	}	
+}	
 
