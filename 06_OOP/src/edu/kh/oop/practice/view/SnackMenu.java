@@ -1,4 +1,4 @@
-package edu.kh.oop.practice.model.service;
+package edu.kh.oop.practice.view;
 
 import java.util.Scanner;
 
